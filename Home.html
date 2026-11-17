@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Princess Day, Vijay Laxmi (Cutu)! 👑✨</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Fredoka, Nunito & Pacifico for playful cartoon storybook feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@500;600;700;800&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <!-- Canvas Confetti for celebratory bursts -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+        :root {
+            --pink-soft: #FFE4EC;
+            --pink-mid: #FFB3C6;
+            --pink-deep: #FB6F92;
+            --lavender-soft: #F3E8FF;
+            --lavender-mid: #D8B4FE;
+            --cream-bg: #FFFDF7;
+            --gold-accent: #F59E0B;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #FFF5F8 0%, #F8F0FF 50%, #FFFBEB 100%);
+            color: #4A354F;
+            overflow-x: hidden;
+            min-height: 100vh;
+            user-select: none;
+            transition: background 0.8s ease;
+        }
+
+        body.apology-mood {
+            background: linear-gradient(135deg, #EEF2FF 0%, #F3E8FF 55%, #E0E7FF 100%);
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-fredoka {
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .font-pacifico {
+            font-family: 'Pacifico', cursive;
+        }
+
+        /* Cartoon Card & Tactile Button Styles */
+        .storybook-card {
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(12px);
+            border: 4px solid #FFD6E0;
+            border-radius: 2rem;
+            box-shadow: 0 12px 0 #FFB3C6, 0 22px 38px rgba(251, 111, 146, 0.18);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.6s ease, box-shadow 0.6s ease;
+        }
+
+        .storybook-card-twilight {
+            border-color: #C7D2FE;
+            box-shadow: 0 12px 0 #A5B4FC, 0 22px 38px rgba(99, 102, 241, 0.16);
+        }
+
+        .storybook-card-lavender {
+            border-color: #E9D5FF;
+            box-shadow: 0 12px 0 #D8B4FE, 0 22px 38px rgba(168, 85, 247, 0.16);
+        }
+
+        .btn-cartoon {
+            font-family: 'Fredoka', sans-serif;
+            transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            top: 0;
+        }
+
+        .btn-cartoon:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-cartoon:active {
+            top: 4px;
+        }
+
+        .btn-pink {
+            background: linear-gradient(180deg, #FF8FA3 0%, #FB6F92 100%);
+            color: white;
+            border: 3px solid #FFF;
+            box-shadow: 0 6px 0 #D94E70, 0 10px 20px rgba(251, 111, 146, 0.35);
+        }
+
+        .btn-pink:active {
+            box-shadow: 0 2px 0 #D94E70;
+        }
+
+        .btn-gold {
+            background: linear-gradient(180deg, #FCD34D 0%, #F59E0B 100%);
+            color: #5C3A00;
+            border: 3px solid #FFFBEB;
+            box-shadow: 0 6px 0 #B45309, 0 10px 20px rgba(245, 158, 11, 0.3);
+        }
+
+        .btn-gold:active {
+            box-shadow: 0 2px 0 #B45309;
+        }
+
+        .btn-lavender {
+            background: linear-gradient(180deg, #C084FC 0%, #9333EA 100%);
+            color: white;
+            border: 3px solid #FAF5FF;
+            box-shadow: 0 6px 0 #6B21A8, 0 10px 20px rgba(147, 51, 234, 0.3);
+        }
+
+        .btn-lavender:active {
+            box-shadow: 0 2px 0 #6B21A8;
+        }
+
+        .btn-indigo {
+            background: linear-gradient(180deg, #818CF8 0%, #4F46E5 100%);
+            color: white;
+            border: 3px solid #EEF2FF;
+            box-shadow: 0 6px 0 #3730A3, 0 10px 20px rgba(79, 70, 229, 0.3);
+        }
+
+        .btn-indigo:active {
+            box-shadow: 0 2px 0 #3730A3;
+        }
+
+        /* Live Character & Ambient Animations */
+        @keyframes floatSlow {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-9px) rotate(1.5deg);
+            }
+        }
+
+        @keyframes floatCloud {
+
+            0%,
+            100% {
+                transform: translateX(0px);
+            }
+
+            50% {
+                transform: translateX(22px);
+            }
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.65));
+            }
+
+            50% {
+                transform: scale(1.09);
+                filter: drop-shadow(0 0 15px rgba(251, 191, 36, 0.95));
+            }
+        }
+
+        @keyframes blinkEyes {
+
+            0%,
+            92%,
+            100% {
+                transform: scaleY(1);
+            }
+
+            96% {
+                transform: scaleY(0.1);
+            }
+        }
+
+        @keyframes curlIdle {
+
+            0%,
+            100% {
+                transform: scale(1) rotate(0deg);
+            }
+
+            50% {
+                transform: scale(1.04) rotate(2deg);
+            }
+        }
+
+        @keyframes curlSuperBounce {
+            0% {
+                transform: scale(1) translateY(0);
+            }
+
+            25% {
+                transform: scale(1.18, 0.88) translateY(6px);
+            }
+
+            55% {
+                transform: scale(0.92, 1.16) translateY(-14px);
+            }
+
+            80% {
+                transform: scale(1.06, 0.96) translateY(2px);
+            }
+
+            100% {
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        @keyframes wiggle {
+
+            0%,
+            100% {
+                transform: rotate(-3deg);
+            }
+
+            50% {
+                transform: rotate(3deg);
+            }
+        }
+
+        @keyframes twinkleStar {
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(0.8);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.25);
+            }
+        }
+
+        @keyframes ambientRise {
+            0% {
+                transform: translateY(105vh) rotate(0deg) scale(0.7);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 0.65;
+            }
+
+            85% {
+                opacity: 0.65;
+            }
+
+            100% {
+                transform: translateY(-10vh) rotate(360deg) scale(1.1);
+                opacity: 0;
+            }
+        }
+
+        .animate-float {
+            animation: floatSlow 3.6s ease-in-out infinite;
+        }
+
+        .animate-cloud {
+            animation: floatCloud 8s ease-in-out infinite;
+        }
+
+        .animate-crown {
+            animation: pulseGlow 2.5s ease-in-out infinite;
+        }
+
+        .animate-wiggle {
+            animation: wiggle 2.3s ease-in-out infinite;
+        }
+
+        .animate-twinkle {
+            animation: twinkleStar 2.2s ease-in-out infinite;
+        }
+
+        .eye-blink {
+            transform-box: fill-box;
+            transform-origin: center;
+            animation: blinkEyes 4.2s infinite;
+        }
+
+        .curly-group {
+            transform-box: fill-box;
+            transform-origin: center;
+            animation: curlIdle 3s ease-in-out infinite;
+        }
+
+        .curly-bounce-active {
+            animation: curlSuperBounce 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+        }
+
+        .ambient-particle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 1;
+            animation: ambientRise linear infinite;
+        }
+
+        /* Flip Card Styling */
+        .flip-card {
+            perspective: 1000px;
+            height: 195px;
+            cursor: pointer;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform-style: preserve-3d;
+        }
+
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 1.5rem;
+            padding: 1.1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid;
+        }
+
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+
+        /* Page Transition Helper */
+        .page-section {
+            display: none;
+            animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.93) translateY(18px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        /* Floating Heart Particles on Click */
+        .floating-heart {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            animation: riseUp 1.5s ease-out forwards;
+            font-size: 1.5rem;
+        }
+
+        @keyframes riseUp {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(0.7) rotate(0deg);
+            }
+
+            50% {
+                opacity: 1;
+                transform: translateY(-60px) scale(1.25) rotate(15deg);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-135px) scale(0.9) rotate(-15deg);
+            }
+        }
+
+        /* Stamp Animation for Promises */
+        @keyframes stampSlam {
+            0% {
+                transform: scale(2.6) rotate(-25deg);
+                opacity: 0;
+            }
+
+            60% {
+                transform: scale(0.92) rotate(4deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1) rotate(-5deg);
+                opacity: 1;
+            }
+        }
+
+        .gold-seal-stamped {
+            animation: stampSlam 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        /* Interactive Wax Envelope Animation */
+        .envelope-flap {
+            transform-origin: top center;
+            transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .envelope-open .envelope-flap {
+            transform: rotateX(180deg);
+        }
+    </style>
+</head>
+
+<body id="mainBody" class="relative flex flex-col items-center justify-between py-4 sm:py-6 px-3 sm:px-6">
+
+    <!-- Ambient Live Floating Particles Container -->
+    <div id="ambientParticlesContainer" class="fixed inset-0 pointer-events-none overflow-hidden z-0"></div>
+
+    <!-- Decorative Fairy-Tale Background Elements -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <svg class="absolute top-6 left-3 w-32 sm:w-48 text-white opacity-80 animate-cloud" viewBox="0 0 200 100"
+            fill="currentColor">
+            <path d="M45,80 H155 A30,30 0 0,0 155,20 A40,40 0 0,0 80,15 A35,35 0 0,0 45,80 Z" />
+        </svg>
+        <svg class="absolute top-20 right-4 w-36 sm:w-56 text-pink-100 opacity-75 animate-cloud"
+            style="animation-delay: -3.5s;" viewBox="0 0 200 100" fill="currentColor">
+            <path d="M45,80 H155 A30,30 0 0,0 155,20 A40,40 0 0,0 80,15 A35,35 0 0,0 45,80 Z" />
+        </svg>
+        <svg class="absolute bottom-10 left-6 w-40 text-purple-100 opacity-75 animate-cloud"
+            style="animation-delay: -1.8s;" viewBox="0 0 200 100" fill="currentColor">
+            <path d="M45,80 H155 A30,30 0 0,0 155,20 A40,40 0 0,0 80,15 A35,35 0 0,0 45,80 Z" />
+        </svg>
+
+        <!-- Distant Fairy Tale Castle Silhouette -->
+        <svg class="absolute bottom-0 right-0 w-64 sm:w-96 text-pink-200/40" viewBox="0 0 300 220" fill="currentColor">
+            <rect x="40" y="110" width="40" height="110" rx="4" />
+            <polygon points="35,110 60,65 85,110" />
+            <rect x="115" y="75" width="70" height="145" rx="4" />
+            <polygon points="108,75 150,20 192,75" />
+            <rect x="220" y="110" width="40" height="110" rx="4" />
+            <polygon points="215,110 240,65 265,110" />
+            <rect x="75" y="135" width="150" height="85" />
+            <path d="M135,220 V175 A15,15 0 0,1 165,175 V220 Z" fill="#FFF5F8" />
+        </svg>
+    </div>
+
+    <!-- TOP NAVIGATION HEADER WITH 10-PAGE PROGRESS BAR & DOTS -->
+    <header
+        class="relative z-10 w-full max-w-2xl bg-white/85 backdrop-blur-md px-4 py-3 rounded-3xl border-2 border-pink-200 shadow-sm mb-5">
+        <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-2">
+                <span class="text-xl animate-wiggle inline-block">👑</span>
+                <span class="font-fredoka font-semibold text-pink-600 text-sm sm:text-base">Vijay Laxmi (Cutu) •
+                    Princess Day</span>
+            </div>
+            <span id="pageCounterBadge"
+                class="text-xs font-extrabold bg-pink-100 text-pink-700 px-2.5 py-1 rounded-full">
+                Page 1 / 10
+            </span>
+        </div>
+
+        <!-- Smooth Progress Bar -->
+        <div class="w-full h-2 bg-pink-100 rounded-full overflow-hidden mb-2.5">
+            <div id="topProgressBar"
+                class="h-full bg-gradient-to-r from-pink-400 via-rose-500 to-amber-400 transition-all duration-500 rounded-full"
+                style="width: 10%;"></div>
+        </div>
+
+        <!-- 10 Interactive Page Indicator Dots -->
+        <div class="flex items-center justify-between gap-1 px-1" id="progressDots">
+            <button onclick="goToPage(1)" class="dot-btn h-2.5 rounded-full bg-pink-500 transition-all cursor-pointer"
+                title="1. Royal Gate"></button>
+            <button onclick="goToPage(2)" class="dot-btn h-2.5 rounded-full bg-pink-200 transition-all cursor-pointer"
+                title="2. Curly Hair Crown"></button>
+            <button onclick="goToPage(3)" class="dot-btn h-2.5 rounded-full bg-pink-200 transition-all cursor-pointer"
+                title="3. Queen Who Inspires"></button>
+            <button onclick="goToPage(4)" class="dot-btn h-2.5 rounded-full bg-pink-200 transition-all cursor-pointer"
+                title="4. Fitness & Vibe"></button>
+            <button onclick="goToPage(5)" class="dot-btn h-2.5 rounded-full bg-pink-200 transition-all cursor-pointer"
+                title="5. Our Little World"></button>
+            <button onclick="goToPage(6)" class="dot-btn h-2.5 rounded-full bg-pink-200 transition-all cursor-pointer"
+                title="6. A Pause"></button>
+            <button onclick="goToPage(7)" class="dot-btn h-2.5 rounded-full bg-pink-200 transition-all cursor-pointer"
+                title="7. Dil Se Sorry"></button>
+            <button onclick="goToPage(8)" class="dot-btn h-2.5 rounded-full bg-pink-200 transition-all cursor-pointer"
+                title="8. 5 Royal Promises"></button>
+            <button onclick="goToPage(9)" class="dot-btn h-2.5 rounded-full bg-pink-200 transition-all cursor-pointer"
+                title="9. Secret Letter"></button>
+            <button onclick="goToPage(10)" class="dot-btn h-2.5 rounded-full bg-pink-200 transition-all cursor-pointer"
+                title="10. Royal Finale"></button>
+        </div>
+    </header>
+
+    <!-- =====================================================================
+MAIN 10-PAGE STORYBOOK CONTAINER
+====================================================================== -->
+    <main class="relative z-10 w-full max-w-2xl my-auto">
+
+        <!-- =========================================================
+PAGE 1: ROYAL GATE COVER (18TH NOVEMBER)
+========================================================== -->
+        <section id="page-1" class="page-section active">
+            <div class="storybook-card p-6 sm:p-9 text-center relative overflow-hidden">
+                <div class="absolute top-4 left-5 text-2xl animate-pulse">✨</div>
+                <div class="absolute top-4 right-5 text-2xl animate-pulse" style="animation-delay: 0.7s;">💖</div>
+
+                <div
+                    class="inline-flex items-center gap-2 bg-amber-100 border-2 border-amber-300 text-amber-800 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold mb-4 shadow-sm">
+                    <span>🗓️ 18th November</span>
+                    <span>•</span>
+                    <span>My Forever Cutu</span>
+                </div>
+
+                <h1 class="text-3xl sm:text-5xl font-bold text-pink-600 leading-tight mb-1">
+                    Happy Princess Day,
+                </h1>
+                <div class="font-pacifico text-3xl sm:text-5xl text-purple-600 mb-4 drop-shadow-sm">
+                    Vijay Laxmi ✨
+                </div>
+
+                <!-- Custom Cartoon Curly-Haired Princess SVG -->
+                <div class="w-52 h-52 sm:w-60 sm:h-60 mx-auto my-2 animate-float">
+                    <svg viewBox="0 0 260 260" class="w-full h-full drop-shadow-md">
+                        <path
+                            d="M35,85 C35,75 48,75 48,85 C48,75 61,75 61,85 C61,98 48,106 48,106 C48,106 35,98 35,85 Z"
+                            fill="#FF758F" />
+                        <path
+                            d="M205,70 C205,62 215,62 215,70 C215,62 225,62 225,70 C225,80 215,87 215,87 C215,87 205,80 205,70 Z"
+                            fill="#C084FC" />
+                        <circle cx="42" cy="145" r="4" fill="#FBBF24" class="animate-twinkle" />
+                        <circle cx="220" cy="130" r="5" fill="#FBBF24" class="animate-twinkle" />
+
+                        <!-- Voluminous Curly Hair -->
+                        <g fill="#2D1B18" class="curly-group">
+                            <circle cx="80" cy="105" r="26" />
+                            <circle cx="180" cy="105" r="26" />
+                            <circle cx="68" cy="135" r="28" />
+                            <circle cx="192" cy="135" r="28" />
+                            <circle cx="72" cy="168" r="26" />
+                            <circle cx="188" cy="168" r="26" />
+                            <circle cx="92" cy="188" r="22" />
+                            <circle cx="168" cy="188" r="22" />
+                            <circle cx="130" cy="95" r="46" />
+                        </g>
+
+                        <!-- Princess Pastel Gown -->
+                        <path d="M85,235 Q92,182 130,182 Q168,182 175,235 Z" fill="#FF8FA3" stroke="#FB6F92"
+                            stroke-width="3" />
+                        <path d="M103,195 Q116,208 130,196 Q144,208 157,195" fill="none" stroke="#FFFBEB"
+                            stroke-width="4" stroke-linecap="round" />
+                        <circle cx="130" cy="212" r="5" fill="#FBBF24" />
+                        <circle cx="86" cy="198" r="16" fill="#FFB3C6" stroke="#FB6F92" stroke-width="2.5" />
+                        <circle cx="174" cy="198" r="16" fill="#FFB3C6" stroke="#FB6F92" stroke-width="2.5" />
+
+                        <!-- Neck & Face -->
+                        <rect x="120" y="162" width="20" height="24" rx="8" fill="#F6C3A5" />
+                        <ellipse cx="130" cy="128" rx="44" ry="42" fill="#FAD2B8" />
+
+                        <!-- Front Curly Ringlets -->
+                        <g fill="#3B231E" class="curly-group">
+                            <circle cx="96" cy="94" r="17" />
+                            <circle cx="116" cy="86" r="18" />
+                            <circle cx="138" cy="85" r="18" />
+                            <circle cx="158" cy="92" r="17" />
+                            <circle cx="86" cy="116" r="14" />
+                            <circle cx="174" cy="116" r="14" />
+                        </g>
+
+                        <!-- Blinking Cartoon Eyes -->
+                        <g class="eye-blink">
+                            <ellipse cx="113" cy="126" rx="7" ry="8.5" fill="#2D1B18" />
+                            <circle cx="111" cy="123" r="2.8" fill="#FFFFFF" />
+                            <circle cx="115" cy="129" r="1.3" fill="#FFFFFF" />
+
+                            <ellipse cx="147" cy="126" rx="7" ry="8.5" fill="#2D1B18" />
+                            <circle cx="145" cy="123" r="2.8" fill="#FFFFFF" />
+                            <circle cx="149" cy="129" r="1.3" fill="#FFFFFF" />
+                        </g>
+
+                        <!-- Eyebrows, Blush, Bindi & Smile -->
+                        <path d="M104,113 Q113,109 121,113" fill="none" stroke="#3B231E" stroke-width="2.5"
+                            stroke-linecap="round" />
+                        <path d="M139,113 Q147,109 156,113" fill="none" stroke="#3B231E" stroke-width="2.5"
+                            stroke-linecap="round" />
+                        <ellipse cx="99" cy="138" rx="8" ry="5" fill="#FF8FA3" opacity="0.65" />
+                        <ellipse cx="161" cy="138" rx="8" ry="5" fill="#FF8FA3" opacity="0.65" />
+                        <circle cx="130" cy="116" r="2.2" fill="#E11D48" />
+                        <path d="M120,142 Q130,153 140,142" fill="none" stroke="#9F1239" stroke-width="3"
+                            stroke-linecap="round" />
+
+                        <!-- Glowing Golden Tiara -->
+                        <g class="animate-crown" transform="translate(98, 42)">
+                            <path d="M6,34 L2,12 L18,22 L32,4 L46,22 L62,12 L58,34 Z" fill="#FBBF24" stroke="#D97706"
+                                stroke-width="2.5" stroke-linejoin="round" />
+                            <rect x="6" y="32" width="52" height="7" rx="3" fill="#F59E0B" stroke="#D97706"
+                                stroke-width="2" />
+                            <circle cx="32" cy="21" r="4" fill="#FB6F92" />
+                            <circle cx="16" cy="26" r="2.5" fill="#A855F7" />
+                            <circle cx="48" cy="26" r="2.5" fill="#A855F7" />
+                        </g>
+                    </svg>
+                </div>
+
+                <p class="text-base sm:text-lg text-gray-600 max-w-md mx-auto mb-6 font-semibold leading-relaxed">
+                    Aaj ka din sirf meri pyaari <span class="text-pink-600 font-bold">Cutu</span> ke naam! Step inside a
+                    little cartoon storybook made straight from my heart.
+                </p>
+
+                <button onclick="goToPage(2); burstConfetti();"
+                    class="btn-cartoon btn-pink text-lg sm:text-xl px-8 py-4 rounded-full font-bold inline-flex items-center gap-2 cursor-pointer">
+                    <span>Enter Your Royal Kingdom</span>
+                    <span>👑</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- =========================================================
+PAGE 2: THE CURLY HAIR CROWN (TAREEF #1)
+========================================================== -->
+        <section id="page-2" class="page-section">
+            <div class="storybook-card p-6 sm:p-8 text-center">
+                <span class="inline-block bg-pink-100 text-pink-600 text-xs font-extrabold px-3 py-1 rounded-full mb-2">
+                    PAGE 2 • TAREEF #1: THE CURLY HAIR CROWN
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-bold text-pink-600 mb-1">
+                    Those Magical Curly Hairs 🌀👑
+                </h2>
+                <p class="text-xs sm:text-sm text-purple-500 font-bold mb-3">
+                    (Tap her curls below to see the magic!)
+                </p>
+
+                <!-- Dedicated Curly Hair Highlight SVG -->
+                <div onclick="bounceCurls(event)"
+                    class="w-56 h-56 sm:w-64 sm:h-64 mx-auto my-2 cursor-pointer relative group"
+                    title="Tap to bounce her curls!">
+                    <svg viewBox="0 0 260 260" class="w-full h-full">
+                        <!-- Magic Halo behind Curls -->
+                        <circle cx="130" cy="130" r="105" fill="#FFE4EC" opacity="0.55" />
+                        <circle cx="130" cy="130" r="88" fill="none" stroke="#FFB3C6" stroke-width="3"
+                            stroke-dasharray="8 6" />
+
+                        <!-- Extra Voluminous Animated Curly Cloud -->
+                        <g id="heroCurlyHairGroup" class="curly-group" fill="#2A1713">
+                            <!-- Outer Fluffy Curls -->
+                            <circle cx="65" cy="95" r="28" />
+                            <circle cx="195" cy="95" r="28" />
+                            <circle cx="52" cy="130" r="30" />
+                            <circle cx="208" cy="130" r="30" />
+                            <circle cx="58" cy="168" r="29" />
+                            <circle cx="202" cy="168" r="29" />
+                            <circle cx="80" cy="195" r="25" />
+                            <circle cx="180" cy="195" r="25" />
+                            <circle cx="95" cy="70" r="26" />
+                            <circle cx="165" cy="70" r="26" />
+                            <circle cx="130" cy="62" r="30" />
+                            <!-- Highlight Spiral Swirls inside Curls -->
+                            <path d="M55,125 C48,125 48,136 56,136 C64,136 64,120 52,120" fill="none" stroke="#5C3A32"
+                                stroke-width="3" stroke-linecap="round" />
+                            <path d="M205,125 C212,125 212,136 204,136 C196,136 196,120 208,120" fill="none"
+                                stroke="#5C3A32" stroke-width="3" stroke-linecap="round" />
+                            <path d="M62,165 C55,165 55,176 63,176 C71,176 71,160 59,160" fill="none" stroke="#5C3A32"
+                                stroke-width="3" stroke-linecap="round" />
+                            <path d="M198,165 C205,165 205,176 197,176 C189,176 189,160 201,160" fill="none"
+                                stroke="#5C3A32" stroke-width="3" stroke-linecap="round" />
+                        </g>
+
+                        <!-- Cute Shoulders -->
+                        <path d="M88,235 Q96,188 130,188 Q164,188 172,235 Z" fill="#C084FC" />
+                        <rect x="120" y="168" width="20" height="24" rx="8" fill="#F6C3A5" />
+
+                        <!-- Face -->
+                        <ellipse cx="130" cy="134" rx="43" ry="41" fill="#FAD2B8" />
+
+                        <!-- Cute Bouncy Front Curls -->
+                        <g fill="#3B231E">
+                            <circle cx="94" cy="100" r="16" />
+                            <circle cx="115" cy="92" r="17" />
+                            <circle cx="138" cy="91" r="17" />
+                            <circle cx="160" cy="98" r="16" />
+                        </g>
+
+                        <!-- Sparkling Eyes -->
+                        <g class="eye-blink">
+                            <ellipse cx="113" cy="132" rx="7" ry="8.5" fill="#2D1B18" />
+                            <circle cx="111" cy="129" r="3" fill="#FFFFFF" />
+                            <ellipse cx="147" cy="132" rx="7" ry="8.5" fill="#2D1B18" />
+                            <circle cx="145" cy="129" r="3" fill="#FFFFFF" />
+                        </g>
+
+                        <circle cx="130" cy="121" r="2.2" fill="#E11D48" />
+                        <ellipse cx="99" cy="144" rx="8" ry="5" fill="#FF8FA3" opacity="0.7" />
+                        <ellipse cx="161" cy="144" rx="8" ry="5" fill="#FF8FA3" opacity="0.7" />
+                        <path d="M119,148 Q130,160 141,148" fill="none" stroke="#9F1239" stroke-width="3"
+                            stroke-linecap="round" />
+
+                        <!-- Little Floating Sparkles -->
+                        <text x="34" y="85" font-size="18" class="animate-twinkle">✨</text>
+                        <text x="210" y="85" font-size="18" class="animate-twinkle"
+                            style="animation-delay: 0.6s;">💖</text>
+                    </svg>
+                </div>
+
+                <!-- Heartfelt Hinglish/English Tareef Box -->
+                <div class="bg-pink-50/90 border-2 border-pink-200 rounded-2xl p-4 sm:p-5 text-center space-y-2 mb-5">
+                    <p class="text-sm sm:text-base text-gray-700 font-semibold leading-relaxed">
+                        "Sach bataun Cutu? Tumhe kisi golden crown ki zaroorat hi nahi hai — <span
+                            class="text-pink-600 font-extrabold">tumhare ye gorgeous curly hairs hi tumhara asli crown
+                            hain!</span>"
+                    </p>
+                    <p class="text-xs sm:text-sm text-purple-700 font-bold">
+                        Har ek curl mein alag hi jaadu hai, aur jab tum muskurati ho toh poora din ban jaata hai. 😍🌀
+                    </p>
+                </div>
+
+                <button onclick="bounceCurls(event)"
+                    class="btn-cartoon btn-gold text-sm sm:text-base px-6 py-3 rounded-full font-bold inline-flex items-center gap-2 mb-6 cursor-pointer">
+                    <span>Tap to Bounce Her Curls</span>
+                    <span>✨🌀</span>
+                </button>
+
+                <!-- Nav Footer -->
+                <div class="flex items-center justify-between pt-2 border-t border-pink-100">
+                    <button onclick="goToPage(1)"
+                        class="text-sm font-bold text-gray-400 hover:text-pink-600 px-3 py-2 cursor-pointer">
+                        ← Back
+                    </button>
+                    <button onclick="goToPage(3)"
+                        class="btn-cartoon btn-pink text-sm sm:text-base px-6 py-2.5 rounded-full font-bold cursor-pointer">
+                        Next: Queen Who Inspires →
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+PAGE 3: THE QUEEN WHO TEACHES & INSPIRES (TAREEF #2)
+========================================================== -->
+        <section id="page-3" class="page-section">
+            <div class="storybook-card p-6 sm:p-8 text-center">
+                <span
+                    class="inline-block bg-purple-100 text-purple-700 text-xs font-extrabold px-3 py-1 rounded-full mb-2">
+                    PAGE 3 • TAREEF #2: GRACE, WISDOM & KINDNESS
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-purple-700 mb-1">
+                    The Queen Who Teaches & Inspires 📚✨
+                </h2>
+                <p class="text-xs sm:text-sm text-gray-500 font-semibold mb-4">
+                    Tap each royal card below to flip & read why I admire Vijay Laxmi so much!
+                </p>
+
+                <!-- Cute Illustration Badge: Books + Crown + Heart -->
+                <div class="w-40 h-28 mx-auto mb-3 animate-float">
+                    <svg viewBox="0 0 200 130" class="w-full h-full">
+                        <!-- Stack of Pastel Books -->
+                        <rect x="35" y="88" width="130" height="22" rx="6" fill="#F472B6" stroke="#DB2777"
+                            stroke-width="2.5" />
+                        <rect x="42" y="93" width="116" height="12" rx="3" fill="#FFF1F2" />
+                        <rect x="45" y="66" width="110" height="22" rx="6" fill="#A78BFA" stroke="#7C3AED"
+                            stroke-width="2.5" />
+                        <rect x="52" y="71" width="96" height="12" rx="3" fill="#F5F3FF" />
+                        <!-- Glowing Heart & Mini Crown on Top -->
+                        <path
+                            d="M100,58 C100,58 74,40 74,24 C74,14 83,8 92,8 C97,8 100,12 100,16 C100,12 103,8 108,8 C117,8 126,14 126,24 C126,40 100,58 100,58 Z"
+                            fill="#FB7185" />
+                        <text x="35" y="45" font-size="18" class="animate-twinkle">⭐</text>
+                        <text x="148" y="45" font-size="18" class="animate-twinkle"
+                            style="animation-delay: 0.5s;">✨</text>
+                    </svg>
+                </div>
+
+                <!-- 4 Interactive Flip Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-6">
+                    <div class="flip-card" onclick="flipCard(this, event)">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front bg-purple-50 border-purple-300">
+                                <div class="text-3xl mb-1.5">👩‍🏫💖</div>
+                                <h3 class="font-bold text-base sm:text-lg text-purple-700">Sabse Pyaari Teacher</h3>
+                                <span
+                                    class="text-xs text-purple-500 mt-1.5 font-bold bg-white px-3 py-1 rounded-full">Tap
+                                    to flip ✨</span>
+                            </div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br from-purple-500 to-indigo-500 border-purple-200 text-white">
+                                <p class="text-xs sm:text-sm font-bold leading-relaxed">
+                                    Jis patience aur dedication se tum padhati ho, wo dekh kar dil se respect aati hai.
+                                    You shape minds with pure love!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card" onclick="flipCard(this, event)">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front bg-pink-50 border-pink-300">
+                                <div class="text-3xl mb-1.5">👑🌟</div>
+                                <h3 class="font-bold text-base sm:text-lg text-pink-700">Independent & Strong</h3>
+                                <span class="text-xs text-pink-500 mt-1.5 font-bold bg-white px-3 py-1 rounded-full">Tap
+                                    to flip ✨</span>
+                            </div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br from-pink-500 to-rose-400 border-pink-200 text-white">
+                                <p class="text-xs sm:text-sm font-bold leading-relaxed">
+                                    Vijay Laxmi sirf naam se hi nahi, apni mehnat aur confidence se bhi ek true Queen
+                                    hai. Proud of everything you do!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card" onclick="flipCard(this, event)">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front bg-amber-50 border-amber-300">
+                                <div class="text-3xl mb-1.5">🤗🌸</div>
+                                <h3 class="font-bold text-base sm:text-lg text-amber-700">Dil Ki Saaf & Caring</h3>
+                                <span
+                                    class="text-xs text-amber-600 mt-1.5 font-bold bg-white px-3 py-1 rounded-full">Tap
+                                    to flip ✨</span>
+                            </div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br from-amber-500 to-orange-400 border-amber-200 text-white">
+                                <p class="text-xs sm:text-sm font-bold leading-relaxed">
+                                    Apno ki care karna aur sabko special feel karana tumhari sabse badi khoobi hai, meri
+                                    Cutu.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card" onclick="flipCard(this, event)">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front bg-rose-50 border-rose-300">
+                                <div class="text-3xl mb-1.5">😊✨</div>
+                                <h3 class="font-bold text-base sm:text-lg text-rose-700">Cute + Classy Combo</h3>
+                                <span class="text-xs text-rose-500 mt-1.5 font-bold bg-white px-3 py-1 rounded-full">Tap
+                                    to flip ✨</span>
+                            </div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br from-rose-500 to-pink-500 border-rose-200 text-white">
+                                <p class="text-xs sm:text-sm font-bold leading-relaxed">
+                                    Ek pal mein bilkul mature queen, aur agle hi pal meri pyari si Cutu — ye combination
+                                    duniya mein sirf tumhare paas hai!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nav Footer -->
+                <div class="flex items-center justify-between pt-2 border-t border-pink-100">
+                    <button onclick="goToPage(2)"
+                        class="text-sm font-bold text-gray-400 hover:text-pink-600 px-3 py-2 cursor-pointer">
+                        ← Back
+                    </button>
+                    <button onclick="goToPage(4)"
+                        class="btn-cartoon btn-lavender text-sm sm:text-base px-6 py-2.5 rounded-full font-bold cursor-pointer">
+                        Next: Vibe & Fitness Queen →
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+PAGE 4: UNMATCHED VIBE & FITNESS QUEEN ENERGY (TAREEF #3)
+========================================================== -->
+        <section id="page-4" class="page-section">
+            <div class="storybook-card p-6 sm:p-8 text-center">
+                <span
+                    class="inline-block bg-amber-100 text-amber-800 text-xs font-extrabold px-3 py-1 rounded-full mb-2">
+                    PAGE 4 • TAREEF #3: UNMATCHED VIBE & RADIANCE
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-pink-600 mb-2">
+                    Fitness Queen & Pure Positive Vibe 💪✨
+                </h2>
+
+                <!-- Radiant Confident Princess Illustration -->
+                <div class="w-48 h-44 mx-auto my-2 animate-float">
+                    <svg viewBox="0 0 220 190" class="w-full h-full">
+                        <!-- Sunburst Glow -->
+                        <circle cx="110" cy="95" r="78" fill="#FEF3C7" opacity="0.75" />
+                        <!-- Curly Hair -->
+                        <g fill="#2D1B18" class="curly-group">
+                            <circle cx="72" cy="75" r="22" />
+                            <circle cx="148" cy="75" r="22" />
+                            <circle cx="65" cy="105" r="23" />
+                            <circle cx="155" cy="105" r="23" />
+                            <circle cx="110" cy="65" r="36" />
+                        </g>
+                        <!-- Sporty Pastel Top -->
+                        <path d="M76,175 Q84,135 110,135 Q136,135 144,175 Z" fill="#FB7185" />
+                        <!-- Face with Cool Star Sunglasses on Forehead -->
+                        <ellipse cx="110" cy="96" rx="34" ry="32" fill="#FAD2B8" />
+                        <!-- Cute Star Crown/Glasses -->
+                        <rect x="85" y="64" width="20" height="12" rx="6" fill="#F59E0B" />
+                        <rect x="115" y="64" width="20" height="12" rx="6" fill="#F59E0B" />
+                        <line x1="105" y1="70" x2="115" y2="70" stroke="#B45309" stroke-width="3" />
+                        <!-- Happy Wink Eye + Sparkling Eye -->
+                        <g class="eye-blink">
+                            <ellipse cx="97" cy="95" rx="5.5" ry="6.5" fill="#2D1B18" />
+                            <circle cx="95" cy="93" r="2.2" fill="#FFF" />
+                        </g>
+                        <path d="M117,95 Q123,89 129,95" fill="none" stroke="#2D1B18" stroke-width="2.8"
+                            stroke-linecap="round" />
+                        <ellipse cx="86" cy="105" rx="6" ry="4" fill="#FF8FA3" opacity="0.7" />
+                        <ellipse cx="134" cy="105" rx="6" ry="4" fill="#FF8FA3" opacity="0.7" />
+                        <path d="M101,109 Q110,119 119,109" fill="none" stroke="#9F1239" stroke-width="2.8"
+                            stroke-linecap="round" />
+                        <!-- Sparkles & Muscle/Star Icons -->
+                        <text x="24" y="65" font-size="22">💪</text>
+                        <text x="172" y="65" font-size="22">🔥</text>
+                        <text x="168" y="145" font-size="20">✨</text>
+                    </svg>
+                </div>
+
+                <p class="text-sm sm:text-base text-gray-600 font-semibold max-w-lg mx-auto mb-4 leading-relaxed">
+                    Apni fitness, health aur glow ka itna khayal rakhna — you literally light up every room aur har ek
+                    drive! Tap the machine below for a fresh dose of tareef:
+                </p>
+
+                <!-- Royal Compliment Machine -->
+                <div
+                    class="bg-gradient-to-r from-amber-50 via-pink-50 to-purple-50 border-2 border-dashed border-amber-300 rounded-2xl p-4 sm:p-5 mb-6">
+                    <p id="complimentDisplay"
+                        class="text-pink-700 font-extrabold text-base sm:text-lg min-h-[3.5rem] flex items-center justify-center px-2 transition-opacity duration-200">
+                        "Vijay Laxmi jab smile karti hai, toh poori duniya ki lighting automatic bright ho jaati hai!"
+                        👑✨
+                    </p>
+                    <button onclick="generateCompliment(event)"
+                        class="btn-cartoon btn-gold text-sm sm:text-base px-6 py-3 rounded-full font-bold mt-2 inline-flex items-center gap-2 cursor-pointer">
+                        <span>Royal Compliment Machine</span>
+                        <span>🎰💌</span>
+                    </button>
+                </div>
+
+                <!-- Nav Footer -->
+                <div class="flex items-center justify-between pt-2 border-t border-pink-100">
+                    <button onclick="goToPage(3)"
+                        class="text-sm font-bold text-gray-400 hover:text-pink-600 px-3 py-2 cursor-pointer">
+                        ← Back
+                    </button>
+                    <button onclick="goToPage(5)"
+                        class="btn-cartoon btn-pink text-sm sm:text-base px-6 py-2.5 rounded-full font-bold cursor-pointer">
+                        Next: Our Little World →
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+PAGE 5: OUR LITTLE WORLD & MEMORIES
+========================================================== -->
+        <section id="page-5" class="page-section">
+            <div class="storybook-card p-6 sm:p-8 text-center">
+                <span
+                    class="inline-block bg-indigo-100 text-indigo-700 text-xs font-extrabold px-3 py-1 rounded-full mb-2">
+                    PAGE 5 • OUR FAIRYTALE CHAPTERS
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-indigo-700 mb-2">
+                    Our Little World & Sweet Memories 🌙🎶
+                </h2>
+
+                <!-- Cozy Starlit Scenic Drive Illustration -->
+                <div class="w-64 h-44 mx-auto my-2 animate-float">
+                    <svg viewBox="0 0 280 180"
+                        class="w-full h-full rounded-2xl overflow-hidden shadow-inner border-2 border-indigo-200">
+                        <!-- Twilight Starlit Sky -->
+                        <rect x="0" y="0" width="280" height="180" fill="#1E1B4B" />
+                        <circle cx="230" cy="38" r="18" fill="#FEF08A" />
+                        <circle cx="222" cy="33" r="16" fill="#1E1B4B" />
+                        <!-- Twinkling Stars -->
+                        <circle cx="45" cy="32" r="2.5" fill="#FFF" class="animate-twinkle" />
+                        <circle cx="95" cy="24" r="3" fill="#FDE047" class="animate-twinkle"
+                            style="animation-delay:0.4s" />
+                        <circle cx="150" cy="40" r="2.5" fill="#FFF" class="animate-twinkle"
+                            style="animation-delay:0.8s" />
+                        <circle cx="185" cy="22" r="2" fill="#F472B6" class="animate-twinkle" />
+                        <!-- Music Notes -->
+                        <text x="68" y="65" font-size="18" fill="#F9A8D4" class="animate-bounce">🎵</text>
+                        <text x="165" y="68" font-size="18" fill="#C4B5FD" class="animate-bounce"
+                            style="animation-delay:0.3s">🎶</text>
+                        <!-- Soft Hills & Road -->
+                        <path d="M0,135 Q80,105 160,130 Q220,145 280,120 L280,180 L0,180 Z" fill="#312E81" />
+                        <rect x="0" y="142" width="280" height="38" fill="#4338CA" />
+                        <line x1="15" y1="160" x2="55" y2="160" stroke="#FDE047" stroke-width="3"
+                            stroke-linecap="round" />
+                        <line x1="85" y1="160" x2="125" y2="160" stroke="#FDE047" stroke-width="3"
+                            stroke-linecap="round" />
+                        <line x1="155" y1="160" x2="195" y2="160" stroke="#FDE047" stroke-width="3"
+                            stroke-linecap="round" />
+                        <line x1="225" y1="160" x2="265" y2="160" stroke="#FDE047" stroke-width="3"
+                            stroke-linecap="round" />
+                        <!-- Cute Pastel Car -->
+                        <g transform="translate(85, 102)">
+                            <path d="M22,25 L34,8 L78,8 L92,25 Z" fill="#FFB3C6" />
+                            <rect x="10" y="23" width="95" height="22" rx="10" fill="#FB6F92" />
+                            <circle cx="32" cy="45" r="9" fill="#1F2937" stroke="#E5E7EB" stroke-width="2.5" />
+                            <circle cx="83" cy="45" r="9" fill="#1F2937" stroke="#E5E7EB" stroke-width="2.5" />
+                            <!-- Little Heart Exhaust -->
+                            <text x="-14" y="34" font-size="14">💕</text>
+                        </g>
+                    </svg>
+                </div>
+
+                <div
+                    class="bg-indigo-50/90 border-2 border-indigo-200 rounded-2xl p-4 sm:p-5 text-center space-y-2 my-4">
+                    <p class="text-sm sm:text-base text-gray-700 font-semibold leading-relaxed">
+                        Chahe chhoti si baat ho, koi pyari si long drive ho, ya sirf tumhari awaaz sunna — <span
+                            class="text-indigo-700 font-extrabold">tumhare saath har ek pal kisi fairy-tale chapter
+                            jaisa lagta hai, Cutu.</span>
+                    </p>
+                </div>
+
+                <button onclick="launchFireworks()"
+                    class="btn-cartoon btn-indigo text-sm sm:text-base px-6 py-3 rounded-full font-bold inline-flex items-center gap-2 mb-6 cursor-pointer">
+                    <span>Light Up The Sky For Cutu</span>
+                    <span>⭐🎆</span>
+                </button>
+
+                <!-- Nav Footer -->
+                <div class="flex items-center justify-between pt-2 border-t border-pink-100">
+                    <button onclick="goToPage(4)"
+                        class="text-sm font-bold text-gray-400 hover:text-pink-600 px-3 py-2 cursor-pointer">
+                        ← Back
+                    </button>
+                    <button onclick="goToPage(6)"
+                        class="btn-cartoon btn-lavender text-sm sm:text-base px-6 py-2.5 rounded-full font-bold cursor-pointer">
+                        Next: Ek Chhoti Si Baat... 🥺 →
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+PAGE 6: A PAUSE FROM YOUR SILLY PRINCE (TRANSITION TO SORRY)
+========================================================== -->
+        <section id="page-6" class="page-section">
+            <div class="storybook-card storybook-card-twilight p-6 sm:p-8 text-center">
+                <span
+                    class="inline-block bg-indigo-100 text-indigo-700 text-xs font-extrabold px-3 py-1 rounded-full mb-2">
+                    PAGE 6 • A PAUSE FROM YOUR SILLY PRINCE
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-indigo-800 mb-2">
+                    Celebration Ke Beech Ek Sachchi Baat... 💜
+                </h2>
+
+                <!-- Apologetic Prince with Drooping Paper Crown & Small Flower -->
+                <div class="w-48 h-48 mx-auto my-2 animate-wiggle">
+                    <svg viewBox="0 0 240 240" class="w-full h-full">
+                        <!-- Prince Hair -->
+                        <path d="M76,112 Q74,66 120,66 Q166,66 164,112 Z" fill="#271914" />
+                        <circle cx="96" cy="74" r="14" fill="#271914" />
+                        <circle cx="120" cy="68" r="16" fill="#271914" />
+                        <circle cx="144" cy="74" r="14" fill="#271914" />
+
+                        <!-- Tilted / Drooping Paper Crown -->
+                        <g transform="translate(142, 42) rotate(24)">
+                            <path d="M2,22 L0,6 L12,14 L22,2 L32,14 L44,6 L42,22 Z" fill="#FDE68A" stroke="#D97706"
+                                stroke-width="2" />
+                        </g>
+
+                        <!-- Face -->
+                        <ellipse cx="120" cy="118" rx="38" ry="36" fill="#F5C4A1" />
+
+                        <!-- Sad Puppy Eyes -->
+                        <g class="eye-blink">
+                            <ellipse cx="105" cy="115" rx="6.5" ry="8" fill="#1E1B18" />
+                            <circle cx="103" cy="112" r="2.8" fill="#FFF" />
+                            <ellipse cx="135" cy="115" rx="6.5" ry="8" fill="#1E1B18" />
+                            <circle cx="133" cy="112" r="2.8" fill="#FFF" />
+                        </g>
+
+                        <!-- Worried Eyebrows & Soft Sad Mouth -->
+                        <path d="M96,104 Q104,98 112,103" fill="none" stroke="#271914" stroke-width="2.5"
+                            stroke-linecap="round" />
+                        <path d="M128,103 Q136,98 144,104" fill="none" stroke="#271914" stroke-width="2.5"
+                            stroke-linecap="round" />
+                        <ellipse cx="93" cy="126" rx="6.5" ry="4" fill="#FB7185" opacity="0.5" />
+                        <ellipse cx="147" cy="126" rx="6.5" ry="4" fill="#FB7185" opacity="0.5" />
+                        <path d="M113,134 Q120,129 127,134" fill="none" stroke="#881337" stroke-width="2.5"
+                            stroke-linecap="round" />
+
+                        <!-- Outfit -->
+                        <path d="M84,210 Q90,156 120,156 Q150,156 156,210 Z" fill="#818CF8" />
+
+                        <!-- Small Pastel Rose Offered Shyly -->
+                        <g transform="translate(152, 145)">
+                            <line x1="10" y1="45" x2="18" y2="15" stroke="#16A34A" stroke-width="3.5"
+                                stroke-linecap="round" />
+                            <circle cx="19" cy="12" r="10" fill="#FB7185" />
+                            <circle cx="19" cy="12" r="5" fill="#E11D48" />
+                        </g>
+                    </svg>
+                </div>
+
+                <div
+                    class="bg-indigo-50/95 border-2 border-indigo-200 rounded-2xl p-5 text-left space-y-3 mb-6 text-gray-700 text-sm sm:text-base leading-relaxed">
+                    <p>
+                        Meri pyaari <span class="font-bold text-indigo-800">Vijay Laxmi</span>,
+                    </p>
+                    <p>
+                        Aaj Princess Day par tumhari tareef karte-karte ek baat jo mere dil par bhaari hai, wo kehna
+                        bahut zaroori hai.
+                    </p>
+                    <p>
+                        Mujhse kuch galtiyan hui hain jinki wajah se tumhe bura laga, tum hurt hui. <span
+                            class="font-bold text-pink-600">Apni sabse favourite person ka dil dukha kar main khud
+                            bilkul khush nahi reh sakta.</span>
+                    </p>
+                </div>
+
+                <!-- Nav Footer -->
+                <div class="flex items-center justify-between pt-2 border-t border-indigo-100">
+                    <button onclick="goToPage(5)"
+                        class="text-sm font-bold text-gray-400 hover:text-indigo-600 px-3 py-2 cursor-pointer">
+                        ← Back
+                    </button>
+                    <button onclick="goToPage(7)"
+                        class="btn-cartoon btn-indigo text-sm sm:text-base px-6 py-2.5 rounded-full font-bold cursor-pointer">
+                        Next: Dil Se Sorry, Cutu 🥺 →
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+PAGE 7: DIL SE SORRY, CUTU (THE HEARTFELT APOLOGY)
+========================================================== -->
+        <section id="page-7" class="page-section">
+            <div class="storybook-card storybook-card-lavender p-6 sm:p-8 text-center">
+                <span
+                    class="inline-block bg-purple-100 text-purple-700 text-xs font-extrabold px-3 py-1 rounded-full mb-2">
+                    PAGE 7 • DIL SE SORRY, CUTU
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-purple-700 mb-2">
+                    I'm Really, Truly Sorry, Cutu 🥺💔
+                </h2>
+
+                <!-- Prince Holding Big "I'M SO SORRY CUTU" Sign -->
+                <div class="w-52 h-48 mx-auto my-2 animate-wiggle">
+                    <svg viewBox="0 0 260 230" class="w-full h-full">
+                        <path d="M196,58 Q202,70 196,75 Q190,70 196,58 Z" fill="#60A5FA" />
+                        <path d="M85,95 Q82,52 130,52 Q178,52 175,95 Z" fill="#271914" />
+                        <ellipse cx="130" cy="102" rx="38" ry="35" fill="#F5C4A1" />
+
+                        <!-- Animated Puppy-Dog Eyes -->
+                        <g class="eye-blink">
+                            <ellipse cx="114" cy="99" rx="7" ry="8.5" fill="#1E1B18" />
+                            <circle cx="112" cy="96" r="3" fill="#FFF" />
+                            <ellipse cx="146" cy="99" rx="7" ry="8.5" fill="#1E1B18" />
+                            <circle cx="144" cy="96" r="3" fill="#FFF" />
+                        </g>
+                        <path d="M104,88 Q113,82 121,87" fill="none" stroke="#271914" stroke-width="2.5"
+                            stroke-linecap="round" />
+                        <path d="M139,87 Q147,82 156,88" fill="none" stroke="#271914" stroke-width="2.5"
+                            stroke-linecap="round" />
+                        <ellipse cx="101" cy="110" rx="7" ry="4.5" fill="#FB7185" opacity="0.6" />
+                        <ellipse cx="159" cy="110" rx="7" ry="4.5" fill="#FB7185" opacity="0.6" />
+                        <path d="M122,118 Q130,113 138,118" fill="none" stroke="#881337" stroke-width="2.5"
+                            stroke-linecap="round" />
+
+                        <!-- Big Heart / Parchment Apology Sign -->
+                        <g transform="translate(42, 134)">
+                            <rect x="0" y="0" width="176" height="74" rx="18" fill="#FFF1F2" stroke="#FB7185"
+                                stroke-width="4" />
+                            <text x="88" y="33" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="700"
+                                font-size="20" fill="#E11D48">I'M SO SORRY</text>
+                            <text x="88" y="56" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="700"
+                                font-size="16" fill="#7E22CE">CUTU 🥺❤️</text>
+                        </g>
+                        <circle cx="48" cy="170" r="11" fill="#F5C4A1" stroke="#E11D48" stroke-width="2" />
+                        <circle cx="212" cy="170" r="11" fill="#F5C4A1" stroke="#E11D48" stroke-width="2" />
+                    </svg>
+                </div>
+
+                <!-- Honest No-Excuse Hinglish/English Apology -->
+                <div
+                    class="bg-purple-50/95 border-2 border-purple-200 rounded-2xl p-5 text-left space-y-3 mb-6 text-gray-700 text-sm sm:text-base leading-relaxed">
+                    <p>
+                        Koi bahana nahi, koi excuse nahi — <span class="font-bold text-purple-800">galti meri thi aur
+                            main usse poori tarah accept karta hoon.</span>
+                    </p>
+                    <p>
+                        <span class="font-bold text-pink-600">Tumhari smile sabse important hai, and I hate being the
+                            reason it faded.</span> Tumne hamesha mujhe samjha aur care di, aur badle mein mujhse jo
+                        hurt hua uske liye main dil se maafi maangta hoon.
+                    </p>
+                    <p class="font-bold text-purple-700">
+                        Main sach mein sudharna chahta hoon, aur wo galtiyan kabhi dubara nahi dohraunga. 🙏❤️
+                    </p>
+                </div>
+
+                <!-- Nav Footer -->
+                <div class="flex items-center justify-between pt-2 border-t border-purple-100">
+                    <button onclick="goToPage(6)"
+                        class="text-sm font-bold text-gray-400 hover:text-purple-600 px-3 py-2 cursor-pointer">
+                        ← Back
+                    </button>
+                    <button onclick="goToPage(8)"
+                        class="btn-cartoon btn-pink text-sm sm:text-base px-6 py-2.5 rounded-full font-bold cursor-pointer">
+                        Next: My 5 Royal Promises 📜 →
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+PAGE 8: MY 5 ROYAL PROMISES (INTERACTIVE STAMPING)
+========================================================== -->
+        <section id="page-8" class="page-section">
+            <div class="storybook-card p-6 sm:p-8">
+                <div class="text-center mb-4">
+                    <span
+                        class="inline-block bg-amber-100 text-amber-800 text-xs font-extrabold px-3 py-1 rounded-full mb-2">
+                        PAGE 8 • SACRED ROYAL VOWS
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-pink-600">
+                        My 5 Royal Promises to Cutu 📜
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gray-500 font-semibold mt-1">
+                        Har ek promise par tap karke apna <span class="text-amber-600 font-extrabold">"APPROVED BY
+                            PRINCESS CUTU 👑"</span> seal lagao!
+                    </p>
+                </div>
+
+                <!-- 5 Interactive Promises Scroll -->
+                <div
+                    class="bg-amber-50/85 border-4 border-amber-200 rounded-3xl p-3.5 sm:p-5 space-y-2.5 mb-4 shadow-inner">
+                    <!-- Promise 1 -->
+                    <div onclick="stampPromise(this, event)"
+                        class="promise-item bg-white hover:bg-pink-50/60 border-2 border-amber-200 rounded-2xl p-3 sm:p-3.5 flex items-center justify-between gap-3 cursor-pointer transition-all shadow-sm">
+                        <div class="flex items-start gap-2.5">
+                            <span class="text-xl mt-0.5">👂💖</span>
+                            <div>
+                                <h3 class="font-bold text-gray-800 text-sm sm:text-base">1. Hamesha Pehle Tumhe
+                                    Samjhunga</h3>
+                                <p class="text-xs text-gray-500 font-semibold">Bina jaldbazi kiye tumhari har baat aur
+                                    feelings ko calmly sununga.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="seal-slot w-20 h-11 rounded-xl border-2 border-dashed border-amber-300 flex items-center justify-center shrink-0 text-[11px] text-amber-500 font-extrabold text-center px-1">
+                            Tap to Seal
+                        </div>
+                    </div>
+
+                    <!-- Promise 2 -->
+                    <div onclick="stampPromise(this, event)"
+                        class="promise-item bg-white hover:bg-pink-50/60 border-2 border-amber-200 rounded-2xl p-3 sm:p-3.5 flex items-center justify-between gap-3 cursor-pointer transition-all shadow-sm">
+                        <div class="flex items-start gap-2.5">
+                            <span class="text-xl mt-0.5">🚫🔁</span>
+                            <div>
+                                <h3 class="font-bold text-gray-800 text-sm sm:text-base">2. Purani Galtiyan Kabhi Repeat
+                                    Nahi Hongi</h3>
+                                <p class="text-xs text-gray-500 font-semibold">Sirf sorry bol kar nahi, apne actions se
+                                    roz prove karunga.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="seal-slot w-20 h-11 rounded-xl border-2 border-dashed border-amber-300 flex items-center justify-center shrink-0 text-[11px] text-amber-500 font-extrabold text-center px-1">
+                            Tap to Seal
+                        </div>
+                    </div>
+
+                    <!-- Promise 3 -->
+                    <div onclick="stampPromise(this, event)"
+                        class="promise-item bg-white hover:bg-pink-50/60 border-2 border-amber-200 rounded-2xl p-3 sm:p-3.5 flex items-center justify-between gap-3 cursor-pointer transition-all shadow-sm">
+                        <div class="flex items-start gap-2.5">
+                            <span class="text-xl mt-0.5">🕊️🌸</span>
+                            <div>
+                                <h3 class="font-bold text-gray-800 text-sm sm:text-base">3. Tumhari Peace & Smile Sabse
+                                    Pehle</h3>
+                                <p class="text-xs text-gray-500 font-semibold">Kabhi tumhe taken-for-granted nahi lunga;
+                                    tumhari khushi meri priority hai.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="seal-slot w-20 h-11 rounded-xl border-2 border-dashed border-amber-300 flex items-center justify-center shrink-0 text-[11px] text-amber-500 font-extrabold text-center px-1">
+                            Tap to Seal
+                        </div>
+                    </div>
+
+                    <!-- Promise 4 -->
+                    <div onclick="stampPromise(this, event)"
+                        class="promise-item bg-white hover:bg-pink-50/60 border-2 border-amber-200 rounded-2xl p-3 sm:p-3.5 flex items-center justify-between gap-3 cursor-pointer transition-all shadow-sm">
+                        <div class="flex items-start gap-2.5">
+                            <span class="text-xl mt-0.5">🤍⏳</span>
+                            <div>
+                                <h3 class="font-bold text-gray-800 text-sm sm:text-base">4. Har Situation Mein Patience
+                                    Rakhunga</h3>
+                                <p class="text-xs text-gray-500 font-semibold">Gussey ya misunderstanding ko kabhi
+                                    hamare pyaar se bada nahi banne dunga.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="seal-slot w-20 h-11 rounded-xl border-2 border-dashed border-amber-300 flex items-center justify-center shrink-0 text-[11px] text-amber-500 font-extrabold text-center px-1">
+                            Tap to Seal
+                        </div>
+                    </div>
+
+                    <!-- Promise 5 -->
+                    <div onclick="stampPromise(this, event)"
+                        class="promise-item bg-white hover:bg-pink-50/60 border-2 border-amber-200 rounded-2xl p-3 sm:p-3.5 flex items-center justify-between gap-3 cursor-pointer transition-all shadow-sm">
+                        <div class="flex items-start gap-2.5">
+                            <span class="text-xl mt-0.5">👑💑</span>
+                            <div>
+                                <h3 class="font-bold text-gray-800 text-sm sm:text-base">5. Hamesha 'Us' Ko Choose
+                                    Karunga</h3>
+                                <p class="text-xs text-gray-500 font-semibold">Har din tumhe ek Princess jaisa respect,
+                                    care aur pyaar dunga.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="seal-slot w-20 h-11 rounded-xl border-2 border-dashed border-amber-300 flex items-center justify-center shrink-0 text-[11px] text-amber-500 font-extrabold text-center px-1">
+                            Tap to Seal
+                        </div>
+                    </div>
+                </div>
+
+                <p id="sealStatusText" class="text-center text-xs sm:text-sm font-extrabold text-amber-700 mb-5">
+                    0 of 5 Promises Approved by Princess Cutu ✨
+                </p>
+
+                <!-- Nav Footer -->
+                <div class="flex items-center justify-between pt-2 border-t border-pink-100">
+                    <button onclick="goToPage(7)"
+                        class="text-sm font-bold text-gray-400 hover:text-pink-600 px-3 py-2 cursor-pointer">
+                        ← Back
+                    </button>
+                    <button onclick="goToPage(9)"
+                        class="btn-cartoon btn-gold text-sm sm:text-base px-6 py-2.5 rounded-full font-bold cursor-pointer">
+                        Next: Secret Love Letter 💌 →
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+PAGE 9: SECRET LOVE NOTE FOR VIJAY LAXMI (WAX-SEALED ENVELOPE)
+========================================================== -->
+        <section id="page-9" class="page-section">
+            <div class="storybook-card p-6 sm:p-8 text-center">
+                <span class="inline-block bg-rose-100 text-rose-700 text-xs font-extrabold px-3 py-1 rounded-full mb-2">
+                    PAGE 9 • ROYAL SECRET LETTER
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-rose-600 mb-2">
+                    A Secret Love Note For Vijay Laxmi 💌
+                </h2>
+                <p id="envelopeInstruction" class="text-xs sm:text-sm text-gray-500 font-semibold mb-5">
+                    Tap the golden wax seal below to open your Princess Day letter!
+                </p>
+
+                <!-- Interactive Wax-Sealed Envelope -->
+                <div id="waxEnvelopeBox" onclick="openLoveEnvelope(event)"
+                    class="max-w-md mx-auto cursor-pointer transition-all duration-500 mb-6">
+                    <!-- Closed Envelope View -->
+                    <div id="closedEnvelopeVisual"
+                        class="relative bg-gradient-to-br from-pink-100 via-rose-100 to-amber-50 border-4 border-pink-300 rounded-3xl p-8 shadow-lg hover:scale-[1.02] transition-transform">
+                        <div class="text-xs font-extrabold tracking-widest text-pink-500 uppercase mb-2">
+                            Strictly For Royal Eyes Only
+                        </div>
+                        <div class="font-pacifico text-2xl sm:text-3xl text-rose-600 mb-5">
+                            Meri Pyaari Vijay Laxmi (Cutu)
+                        </div>
+
+                        <!-- Golden Wax Seal Button -->
+                        <div
+                            class="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-amber-300 via-amber-500 to-amber-700 border-4 border-amber-200 shadow-xl flex flex-col items-center justify-center animate-crown">
+                            <span class="text-2xl">👑</span>
+                            <span class="text-[10px] font-extrabold text-amber-950 uppercase">Tap Seal</span>
+                        </div>
+                    </div>
+
+                    <!-- Opened Romantic Letter View -->
+                    <div id="openedLetterContent"
+                        class="hidden bg-[#FFFDF7] border-4 border-amber-200 rounded-3xl p-5 sm:p-7 text-left shadow-xl space-y-3.5 relative">
+                        <div class="flex items-center justify-between border-b-2 border-dashed border-pink-200 pb-2">
+                            <span class="font-pacifico text-xl text-pink-600">Meri Pyaari Vijay Laxmi (Cutu),</span>
+                            <span class="text-xl">👑💖</span>
+                        </div>
+
+                        <p class="text-sm sm:text-base text-gray-700 font-semibold leading-relaxed">
+                            Happy Princess Day, meri jaan! 18th November sirf ek date nahi hai, mere liye ye ek reminder
+                            hai ki meri zindagi mein kitni khoobsurat, caring aur special insaan hai.
+                        </p>
+
+                        <p class="text-sm sm:text-base text-gray-700 font-semibold leading-relaxed">
+                            Tumhare curly baalon se lekar tumhari pyari si muskurahat tak, tumhara bachon ko pyaar se
+                            padhana, apni fitness aur goals ke liye mehnat karna — har ek cheez mujhe tumse aur zyada
+                            pyaar karne par majboor karti hai.
+                        </p>
+
+                        <p class="text-sm sm:text-base text-gray-700 font-semibold leading-relaxed">
+                            Jo bhi galtiyan hui, unhe peeche chhod kar main bas tumhare saath aise hi hazaaron khushiyon
+                            bhare chapters likhna chahta hoon. Tum hamesha meri Princess aur meri Queen rahogi.
+                        </p>
+
+                        <div class="pt-2 text-right font-fredoka font-bold text-purple-700 text-base">
+                            Forever Yours,<br>Your Silly Prince ❤️✨
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nav Footer -->
+                <div class="flex items-center justify-between pt-2 border-t border-pink-100">
+                    <button onclick="goToPage(8)"
+                        class="text-sm font-bold text-gray-400 hover:text-pink-600 px-3 py-2 cursor-pointer">
+                        ← Back
+                    </button>
+                    <button onclick="goToPage(10)"
+                        class="btn-cartoon btn-pink text-sm sm:text-base px-6 py-2.5 rounded-full font-bold cursor-pointer">
+                        Final Page: Royal Finale 👑 →
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+PAGE 10: THE ROYAL FORGIVENESS FINALE
+========================================================== -->
+        <section id="page-10" class="page-section">
+            <div class="storybook-card p-6 sm:p-9 text-center relative overflow-hidden">
+
+                <!-- STATE A: BEFORE FORGIVENESS PROMPT -->
+                <div id="forgivenessPromptState">
+                    <span
+                        class="inline-block bg-pink-100 text-pink-600 text-xs font-extrabold px-3 py-1 rounded-full mb-3">
+                        PAGE 10 • THE ROYAL FORGIVENESS FINALE
+                    </span>
+
+                    <!-- Cute Cartoon Prince Offering Roses & Shining Tiara -->
+                    <div class="w-48 h-44 mx-auto my-1 animate-float">
+                        <svg viewBox="0 0 240 200" class="w-full h-full">
+                            <!-- Prince -->
+                            <path d="M72,95 Q70,52 110,52 Q150,52 148,95 Z" fill="#271914" />
+                            <ellipse cx="110" cy="98" rx="34" ry="32" fill="#F5C4A1" />
+                            <g class="eye-blink">
+                                <ellipse cx="97" cy="95" rx="6" ry="7.5" fill="#1E1B18" />
+                                <circle cx="95" cy="92" r="2.5" fill="#FFF" />
+                                <ellipse cx="123" cy="95" rx="6" ry="7.5" fill="#1E1B18" />
+                                <circle cx="121" cy="92" r="2.5" fill="#FFF" />
+                            </g>
+                            <ellipse cx="86" cy="105" rx="6" ry="3.5" fill="#FB7185" opacity="0.65" />
+                            <ellipse cx="134" cy="105" rx="6" ry="3.5" fill="#FB7185" opacity="0.65" />
+                            <path d="M103,112 Q110,119 117,112" fill="none" stroke="#881337" stroke-width="2.5"
+                                stroke-linecap="round" />
+                            <path d="M78,185 Q84,134 110,134 Q136,134 142,185 Z" fill="#8B5CF6" />
+
+                            <!-- Bouquet of Roses on Left -->
+                            <g transform="translate(36, 118)">
+                                <polygon points="15,48 4,18 32,24" fill="#FDE68A" stroke="#D97706" stroke-width="2" />
+                                <circle cx="10" cy="14" r="8" fill="#E11D48" />
+                                <circle cx="23" cy="12" r="8" fill="#FB7185" />
+                                <circle cx="17" cy="21" r="8" fill="#F43F5E" />
+                            </g>
+
+                            <!-- Shining Golden Tiara Offered on Right -->
+                            <g class="animate-crown" transform="translate(152, 112)">
+                                <path d="M4,28 L0,10 L14,18 L24,2 L34,18 L48,10 L44,28 Z" fill="#FBBF24"
+                                    stroke="#D97706" stroke-width="2" />
+                                <circle cx="24" cy="17" r="3.5" fill="#FB6F92" />
+                            </g>
+                        </svg>
+                    </div>
+
+                    <!-- Dynamic Puppy Reaction Text -->
+                    <div class="mb-4">
+                        <span class="text-4xl inline-block animate-bounce" id="puppyEmoji">🥺</span>
+                        <p id="puppyNudgeText"
+                            class="text-sm sm:text-base font-extrabold text-purple-600 mt-1 min-h-[1.5rem]">
+                            Tumhara silly prince roses aur tiara lekar wait kar raha hai...
+                        </p>
+                    </div>
+
+                    <h2 class="text-2xl sm:text-3xl font-bold text-pink-600 leading-snug mb-6">
+                        Kya Princess Cutu apne silly prince ko maaf karegi? 🥺❤️
+                    </h2>
+
+                    <!-- Two Interactive Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-3">
+                        <button id="yesForgiveBtn" onclick="acceptForgiveness()"
+                            class="btn-cartoon btn-pink text-lg sm:text-xl px-8 py-4 rounded-full font-bold inline-flex items-center gap-2 cursor-pointer z-10">
+                            <span>Haan, Maaf Kiya</span>
+                            <span>❤️</span>
+                        </button>
+
+                        <button id="thinkBtn" onclick="nudgeForgiveness(event)"
+                            class="btn-cartoon bg-gray-100 hover:bg-gray-200 text-gray-700 border-2 border-gray-300 text-sm sm:text-base px-5 py-3 rounded-full font-bold cursor-pointer transition-all">
+                            Thoda aur manao 🙈
+                        </button>
+                    </div>
+                </div>
+
+                <!-- STATE B: GRAND FINALE CELEBRATION AFTER SHE CLICKS "HAAN, MAAF KIYA ❤️" -->
+                <div id="celebrationFinaleState" class="hidden">
+                    <div
+                        class="inline-flex items-center gap-2 bg-amber-100 border-2 border-amber-300 text-amber-800 px-4 py-1.5 rounded-full text-xs sm:text-sm font-extrabold mb-3">
+                        <span>🎉 ROYAL PARDON GRANTED • 18TH NOVEMBER 🎉</span>
+                    </div>
+
+                    <h2 class="text-2xl sm:text-4xl font-bold text-pink-600 leading-tight mb-1">
+                        Happy Princess Day,
+                    </h2>
+                    <div class="font-pacifico text-2xl sm:text-4xl text-amber-500 mb-3">
+                        My Queen Vijay Laxmi! 👑💖
+                    </div>
+
+                    <!-- Happy Crowned Cartoon Couple Celebration SVG -->
+                    <div class="w-64 h-48 sm:w-72 sm:h-52 mx-auto my-2 animate-float">
+                        <svg viewBox="0 0 300 210" class="w-full h-full">
+                            <path
+                                d="M150,190 C150,190 45,125 45,65 C45,30 78,12 108,12 C128,12 143,23 150,36 C157,23 172,12 192,12 C222,12 255,30 255,65 C255,125 150,190 Z"
+                                fill="#FFE4EC" stroke="#FFB3C6" stroke-width="3" />
+                            <text x="32" y="45" font-size="20" class="animate-twinkle">✨</text>
+                            <text x="248" y="45" font-size="20" class="animate-twinkle">✨</text>
+                            <text x="142" y="25" font-size="18">💖</text>
+
+                            <!-- Happy Prince -->
+                            <g transform="translate(68, 52)">
+                                <path d="M12,50 Q10,16 44,16 Q78,16 76,50 Z" fill="#271914" />
+                                <path d="M28,16 L25,4 L36,10 L44,1 L52,10 L63,4 L60,16 Z" fill="#FBBF24"
+                                    stroke="#B45309" stroke-width="1.5" />
+                                <ellipse cx="44" cy="56" rx="30" ry="28" fill="#F5C4A1" />
+                                <path d="M29,52 Q34,46 39,52" fill="none" stroke="#1E1B18" stroke-width="2.5"
+                                    stroke-linecap="round" />
+                                <path d="M49,52 Q54,46 59,52" fill="none" stroke="#1E1B18" stroke-width="2.5"
+                                    stroke-linecap="round" />
+                                <ellipse cx="26" cy="60" rx="5" ry="3" fill="#FB7185" opacity="0.6" />
+                                <ellipse cx="62" cy="60" rx="5" ry="3" fill="#FB7185" opacity="0.6" />
+                                <path d="M35,66 Q44,76 53,66" fill="none" stroke="#881337" stroke-width="2.5"
+                                    stroke-linecap="round" />
+                                <path d="M16,115 Q20,84 44,84 Q68,84 72,115 Z" fill="#8B5CF6" />
+                            </g>
+
+                            <!-- Happy Curly-Haired Queen Vijay Laxmi -->
+                            <g transform="translate(144, 48)">
+                                <g class="curly-group" fill="#2D1B18">
+                                    <circle cx="16" cy="46" r="16" />
+                                    <circle cx="72" cy="46" r="16" />
+                                    <circle cx="12" cy="68" r="16" />
+                                    <circle cx="76" cy="68" r="16" />
+                                    <circle cx="44" cy="36" r="32" />
+                                </g>
+                                <!-- Glowing Crown -->
+                                <path class="animate-crown" d="M26,18 L22,4 L35,12 L44,0 L53,12 L66,4 L62,18 Z"
+                                    fill="#FBBF24" stroke="#D97706" stroke-width="1.8" />
+                                <ellipse cx="44" cy="58" rx="30" ry="28" fill="#FAD2B8" />
+                                <circle cx="24" cy="34" r="11" fill="#3B231E" />
+                                <circle cx="44" cy="30" r="12" fill="#3B231E" />
+                                <circle cx="64" cy="34" r="11" fill="#3B231E" />
+                                <path d="M29,55 Q34,49 39,55" fill="none" stroke="#2D1B18" stroke-width="2.5"
+                                    stroke-linecap="round" />
+                                <path d="M49,55 Q54,49 59,55" fill="none" stroke="#2D1B18" stroke-width="2.5"
+                                    stroke-linecap="round" />
+                                <circle cx="44" cy="48" r="1.8" fill="#E11D48" />
+                                <ellipse cx="25" cy="63" rx="5.5" ry="3.5" fill="#FF8FA3" opacity="0.7" />
+                                <ellipse cx="63" cy="63" rx="5.5" ry="3.5" fill="#FF8FA3" opacity="0.7" />
+                                <path d="M35,68 Q44,78 53,68" fill="none" stroke="#9F1239" stroke-width="2.5"
+                                    stroke-linecap="round" />
+                                <path d="M16,119 Q20,86 44,86 Q68,86 72,119 Z" fill="#FB6F92" />
+                            </g>
+
+                            <path
+                                d="M142,102 C142,95 150,95 150,102 C150,95 158,95 158,102 C158,111 150,117 150,117 C150,117 142,111 142,102 Z"
+                                fill="#E11D48" />
+                        </svg>
+                    </div>
+
+                    <div
+                        class="bg-gradient-to-br from-pink-50 via-amber-50 to-purple-50 border-2 border-pink-200 rounded-2xl p-4 sm:p-5 text-center space-y-2 mb-5 shadow-sm">
+                        <p class="text-sm sm:text-base text-gray-700 font-semibold leading-relaxed">
+                            Thank you itne bade dil ke liye, meri <span
+                                class="font-extrabold text-pink-600">Cutu</span>! Aaj aur har din tumhe bilkul ek Queen
+                            ki tarah treat karunga.
+                        </p>
+                        <p class="font-fredoka font-bold text-purple-700 text-base sm:text-lg">
+                            Love you endless, Vijay Laxmi! 👑✨💕
+                        </p>
+                    </div>
+
+                    <div class="flex flex-wrap items-center justify-center gap-3">
+                        <button
+                            onclick="burstConfetti(); spawnFloatingHearts(window.innerWidth/2, window.innerHeight/2, 12);"
+                            class="btn-cartoon btn-gold text-sm sm:text-base px-6 py-3 rounded-full font-bold inline-flex items-center gap-2 cursor-pointer">
+                            <span>Shower More Confetti & Hearts</span>
+                            <span>🎊💖</span>
+                        </button>
+                        <button onclick="goToPage(1)"
+                            class="text-sm font-bold text-pink-500 hover:text-pink-700 px-4 py-2 cursor-pointer">
+                            ↻ Start From Page 1
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Subtle Footer with Swipe/Keyboard Hint -->
+    <footer class="relative z-10 text-center text-xs text-pink-500 font-bold mt-5 space-y-1">
+        <div>Made with endless love for Vijay Laxmi (Cutu) • 18th November 👑</div>
+        <div class="text-[11px] text-gray-400 font-semibold">Tip: Swipe left/right or use arrow keys to turn pages ✨
+        </div>
+    </footer>
+
+    <!-- =====================================================================
+JAVASCRIPT: 10-PAGE NAVIGATION, SWIPE/KEYS, LIVE ANIMATIONS & FINALE
+====================================================================== -->
+    <script>
+        const TOTAL_PAGES = 10;
+        let currentPage = 1;
+        let sealedCount = 0;
+        let nudgeIndex = 0;
+        let yesScale = 1;
+
+        // Tailored Hinglish/English Royal Compliments for Vijay Laxmi / Cutu
+        const royalCompliments = [
+            "\"Vijay Laxmi ke curly hairs aur uski cute si smile ke saamne toh Disney princesses bhi fail hain!\" 🌀👑",
+            "\"Fitness queen + sabse pyaari teacher + meri Cutu — ek hi insaan mein itna perfection kaise?!\" 💪📚",
+            "\"Tumhari awaaz aur tumhari company kisi bhi boring din ko magic mein badal deti hai, Cutu!\" ✨💖",
+            "\"Jab tum muskurati ho na Vijay Laxmi, lagta hai poori duniya ki tension gayab ho gayi!\" 😊🌸",
+            "\"18th November sirf ek din hai, tum toh poore saal meri zindagi ki undisputed Queen ho!\" 👑❤️",
+            "\"Har ek curly ringlet mein cuteness overloaded hai — meri forever favourite Cutu!\" 🌀💕"
+        ];
+
+        // Playful Hinglish Pleas when she taps "Thoda aur manao 🙈"
+        const puppyNudges = [
+            { emoji: "🥹", text: "Please Cutu, ice cream aur tumhari favourite treat pakka! 🍦🍫", btnText: "Aur manao abhi... 🙈" },
+            { emoji: "🐶", text: "Main kaan pakad ke sorry bolta hoon! Ek last chance de do apne silly prince ko? 🙏🥺", btnText: "Sochne do thoda... 🤔" },
+            { emoji: "😭", text: "Dekho mera paper crown bhi gir gaya sadness mein... ab toh smile kar do Cutu! 👑💔", btnText: "Almost pighal gayi... 🫣" },
+            { emoji: "🥰", text: "Promised: No more mistakes, sirf dher saara pyaar aur pampering! Ab click kardo ❤️", btnText: "Okay chalo click karti hoon! 💕" }
+        ];
+
+        /**
+        * Spawn gentle ambient floating hearts & stars in background
+        */
+        function initAmbientParticles() {
+            const container = document.getElementById('ambientParticlesContainer');
+            const symbols = ['💖', '✨', '🌸', '👑', '💕', '⭐'];
+            for (let i = 0; i < 16; i++) {
+                const el = document.createElement('div');
+                el.className = 'ambient-particle';
+                el.textContent = symbols[i % symbols.length];
+                el.style.left = `${Math.random() * 96}%`;
+                el.style.fontSize = `${14 + Math.random() * 14}px`;
+                el.style.animationDuration = `${11 + Math.random() * 11}s`;
+                el.style.animationDelay = `${-Math.random() * 15}s`;
+                container.appendChild(el);
+            }
+        }
+
+        /**
+        * Navigate between the 10 storybook pages smoothly
+        */
+        function goToPage(pageNum) {
+            if (pageNum < 1 || pageNum > TOTAL_PAGES) return;
+
+            document.querySelectorAll('.page-section').forEach(sec => {
+                sec.classList.remove('active');
+            });
+
+            const target = document.getElementById(`page-${pageNum}`);
+            if (target) {
+                target.classList.add('active');
+                currentPage = pageNum;
+                updateProgressUI();
+
+                // Shift background mood gently on Apology Pages (Pages 6 & 7)
+                const body = document.getElementById('mainBody');
+                if (pageNum === 6 || pageNum === 7) {
+                    body.classList.add('apology-mood');
+                } else {
+                    body.classList.remove('apology-mood');
+                }
+
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        /**
+        * Update top progress bar, badge counter & 10 indicator dots
+        */
+        function updateProgressUI() {
+            const badge = document.getElementById('pageCounterBadge');
+            const bar = document.getElementById('topProgressBar');
+            badge.textContent = `Page ${currentPage} / ${TOTAL_PAGES}`;
+            bar.style.width = `${(currentPage / TOTAL_PAGES) * 100}%`;
+
+            const dots = document.querySelectorAll('.dot-btn');
+            dots.forEach((dot, idx) => {
+                if (idx + 1 === currentPage) {
+                    dot.classList.remove('bg-pink-200', 'w-2.5', 'sm:w-3');
+                    dot.classList.add('bg-pink-500', 'w-6', 'sm:w-8');
+                } else if (idx + 1 < currentPage) {
+                    dot.classList.remove('bg-pink-200', 'w-6', 'sm:w-8');
+                    dot.classList.add('bg-pink-400', 'w-2.5', 'sm:w-3');
+                } else {
+                    dot.classList.remove('bg-pink-500', 'bg-pink-400', 'w-6', 'sm:w-8');
+                    dot.classList.add('bg-pink-200', 'w-2.5', 'sm:w-3');
+                }
+            });
+        }
+
+        /**
+        * Page 2: Interactive Curly Hair Bounce + Sparkles & Hearts
+        */
+        function bounceCurls(event) {
+            const hairGroup = document.getElementById('heroCurlyHairGroup');
+            if (hairGroup) {
+                hairGroup.classList.remove('curly-bounce-active');
+                void hairGroup.offsetWidth; // trigger reflow
+                hairGroup.classList.add('curly-bounce-active');
+            }
+            const x = event ? event.clientX : window.innerWidth / 2;
+            const y = event ? event.clientY : window.innerHeight / 2;
+            spawnFloatingHearts(x, y, 8);
+        }
+
+        /**
+        * Page 3: Flip card interaction
+        */
+        function flipCard(cardElement, event) {
+            cardElement.classList.toggle('flipped');
+            spawnFloatingHearts(event.clientX, event.clientY, 5);
+        }
+
+        /**
+        * Page 4: Royal Compliment Machine
+        */
+        let lastComplimentIdx = 0;
+        function generateCompliment(event) {
+            let nextIdx;
+            do {
+                nextIdx = Math.floor(Math.random() * royalCompliments.length);
+            } while (nextIdx === lastComplimentIdx);
+            lastComplimentIdx = nextIdx;
+
+            const display = document.getElementById('complimentDisplay');
+            display.style.opacity = '0';
+            setTimeout(() => {
+                display.textContent = royalCompliments[nextIdx];
+                display.style.opacity = '1';
+            }, 160);
+
+            spawnFloatingHearts(event.clientX, event.clientY, 6);
+        }
+
+        /**
+        * Page 5: Animated Fireworks across the screen
+        */
+        function launchFireworks() {
+            if (typeof confetti !== 'function') return;
+            const colors = ['#FB6F92', '#FBBF24', '#C084FC', '#60A5FA', '#34D399'];
+            confetti({ particleCount: 50, angle: 60, spread: 55, origin: { x: 0.1, y: 0.7 }, colors });
+            setTimeout(() => {
+                confetti({ particleCount: 50, angle: 120, spread: 55, origin: { x: 0.9, y: 0.7 }, colors });
+            }, 250);
+            setTimeout(() => {
+                confetti({ particleCount: 70, spread: 90, origin: { x: 0.5, y: 0.45 }, colors });
+            }, 500);
+        }
+
+        /**
+        * Page 8: Stamp each of the 5 promises with "APPROVED BY PRINCESS CUTU 👑"
+        */
+        function stampPromise(itemElement, event) {
+            if (itemElement.dataset.sealed === "true") {
+                spawnFloatingHearts(event.clientX, event.clientY, 3);
+                return;
+            }
+
+            itemElement.dataset.sealed = "true";
+            itemElement.classList.remove('bg-white', 'border-amber-200');
+            itemElement.classList.add('bg-amber-100/80', 'border-amber-400');
+
+            const sealSlot = itemElement.querySelector('.seal-slot');
+            sealSlot.className = "seal-slot w-24 h-12 rounded-xl bg-gradient-to-br from-amber-300 via-yellow-400 to-amber-500 border-2 border-amber-700 shadow-md flex flex-col items-center justify-center shrink-0 gold-seal-stamped px-1";
+            sealSlot.innerHTML = `
+<span class="text-[9px] font-black text-amber-950 leading-tight uppercase text-center">APPROVED BY<br>PRINCESS CUTU 👑</span>
+`;
+
+            sealedCount++;
+            const statusText = document.getElementById('sealStatusText');
+            if (sealedCount < 5) {
+                statusText.textContent = `${sealedCount} of 5 Promises Approved by Princess Cutu ✨`;
+            } else {
+                statusText.innerHTML = `All 5 Royal Promises Approved Forever! 💖👑`;
+                burstConfetti();
+            }
+
+            spawnFloatingHearts(event.clientX, event.clientY, 5);
+        }
+
+        /**
+        * Page 9: Break Wax Seal & Reveal Secret Love Note
+        */
+        function openLoveEnvelope(event) {
+            const closedVisual = document.getElementById('closedEnvelopeVisual');
+            const openedLetter = document.getElementById('openedLetterContent');
+            const instruction = document.getElementById('envelopeInstruction');
+
+            if (!closedVisual.classList.contains('hidden')) {
+                closedVisual.classList.add('hidden');
+                openedLetter.classList.remove('hidden');
+                openedLetter.style.animation = 'popIn 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards';
+                instruction.textContent = "Sealed with love for Vijay Laxmi (Cutu) 💌✨";
+                burstConfetti();
+                spawnFloatingHearts(event.clientX, event.clientY, 8);
+            }
+        }
+
+        /**
+        * Page 10: Playful Nudge on "Thoda aur manao 🙈"
+        */
+        function nudgeForgiveness(event) {
+            const nudge = puppyNudges[nudgeIndex % puppyNudges.length];
+            nudgeIndex++;
+
+            const emojiEl = document.getElementById('puppyEmoji');
+            const textEl = document.getElementById('puppyNudgeText');
+            const thinkBtn = document.getElementById('thinkBtn');
+            const yesBtn = document.getElementById('yesForgiveBtn');
+
+            emojiEl.textContent = nudge.emoji;
+            textEl.textContent = nudge.text;
+            thinkBtn.textContent = nudge.btnText;
+
+            yesScale = Math.min(yesScale + 0.08, 1.32);
+            yesBtn.style.transform = `scale(${yesScale})`;
+
+            spawnFloatingHearts(event.clientX, event.clientY, 5);
+        }
+
+        /**
+        * Page 10: Grand Finale Celebration on "Haan, Maaf Kiya ❤️"
+        */
+        function acceptForgiveness() {
+            document.getElementById('forgivenessPromptState').classList.add('hidden');
+            document.getElementById('celebrationFinaleState').classList.remove('hidden');
+            burstConfetti();
+            setTimeout(launchFireworks, 450);
+            setTimeout(burstConfetti, 1000);
+        }
+
+        /**
+        * Spawn cute rising hearts & sparkles at click/tap coordinates
+        */
+        function spawnFloatingHearts(x, y, count = 5) {
+            const hearts = ['💖', '💕', '👑', '✨', '🌸', '🌀', '💜'];
+            for (let i = 0; i < count; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'floating-heart';
+                heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+
+                const offsetX = (Math.random() - 0.5) * 75;
+                const offsetY = (Math.random() - 0.5) * 30;
+                heart.style.left = `${(x || window.innerWidth / 2) + offsetX}px`;
+                heart.style.top = `${(y || window.innerHeight / 2) + offsetY}px`;
+                heart.style.animationDuration = `${1.1 + Math.random() * 0.7}s`;
+
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 1700);
+            }
+        }
+
+        /**
+        * Pastel & Gold Confetti Burst
+        */
+        function burstConfetti() {
+            if (typeof confetti === 'function') {
+                confetti({
+                    particleCount: 80,
+                    spread: 80,
+                    origin: { y: 0.65 },
+                    colors: ['#FB6F92', '#FFB3C6', '#C084FC', '#FBBF24', '#FFFBEB']
+                });
+            }
+        }
+
+        // Keyboard Arrow Navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') goToPage(currentPage + 1);
+            if (e.key === 'ArrowLeft') goToPage(currentPage - 1);
+        });
+
+        // Mobile Touch Swipe Navigation
+        let touchStartX = 0;
+        let touchEndX = 0;
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        document.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 65) {
+                if (diff > 0) goToPage(currentPage + 1);
+                else goToPage(currentPage - 1);
+            }
+        }, { passive: true });
+
+        // Initialize on Load
+        initAmbientParticles();
+        updateProgressUI();
+    </script>
+</body>
+
+</html>
